@@ -66,10 +66,10 @@
 
         default_layer {
             bindings = <
-&kp Q           &kp W             &kp E         &kp R             &kp T                                                        &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A           &kp S             &kp D         &kp F             &kp G        &kp LS(LG(S))                    &kp MINUS      &kp H        &kp J  &kp K      &kp L    &kp SEMICOLON
-&kp Z           &kp X             &kp C         &kp V             &kp B        &kp COLON                        &kp AT         &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 1 SPACE  &lt_to_layer_0 3 LANGUAGE_1      &kp BACKSPACE  &lt 0 ENTER                             &kp DEL
+&kp Q           &kp W             &kp E         &kp R             &kp T                                                           &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A           &kp S             &kp D         &kp F             &kp G        &kp LS(LG(S))                    &kp BACKSPACE     &kp H        &kp J  &kp K      &kp L    &kp SEMICOLON
+&kp Z           &kp X             &kp C         &kp V             &kp B        &kp COLON                        &kp AT            &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 1 SPACE  &lt_to_layer_0 3 LANGUAGE_2      &lt 1 LANGUAGE_1  &lt 3 ENTER                             &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -77,10 +77,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans        &trans     &kp BACKSPACE
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &kp UP_ARROW  &mkp MB2   &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                     &trans
             >;
         };
 
