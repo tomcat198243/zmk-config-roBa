@@ -62,25 +62,25 @@
 
         default_layer {
             bindings = <
-&lt 4 Q         &kp W             &kp E         &kp R             &kp T                                                           &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A           &kp S             &kp D         &lt 2 F           &kp G        &kp LS(LG(S))                    &kp BACKSPACE     &kp H        &kp J  &lt 2 K    &kp L    &lt 1 SEMICOLON
-&kp Z           &kp X             &kp C         &kp V             &kp B        &kp COLON                        &kp AT            &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
-&kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 1 SPACE  &lt_to_layer_0 3 LANGUAGE_2      &lt 1 LANGUAGE_1  &lt 3 ENTER                             &kp DEL
+&lt 1 Q         &kp W             &kp E         &kp R             &kp T                                                           &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A           &kp S             &kp D         &lt 5 F           &kp G        &kp LS(LG(NUMBER_3))             &kp BACKSPACE     &kp H        &kp J  &lt 5 K    &kp L    &lt 4 SEMICOLON
+&kp Z           &kp X             &kp C         &kp V             &kp B        &kp LG(LS(N5))                   &kp AT            &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
+&kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 4 SPACE  &lt_to_layer_0 3 LANGUAGE_2      &lt 4 LANGUAGE_1  &lt 3 ENTER                             &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
-        MOUSE {
+        Bluetooth {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                    &trans  &mkp MB4  &mkp MB3      &mkp MB5   &kp BACKSPACE
-&trans  &trans  &trans  &trans  &trans  &trans      &kp LS(LG(NUMBER_3))  &trans  &mkp MB1  &kp UP_ARROW  &mkp MB2   &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &kp LS(LG(N5))        &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &kp DELETE
-&trans  &trans  &trans  &trans  &trans  &trans      &trans                &trans                                     &kp DEL
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans        &trans        &trans        &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans        &trans        &trans        &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans        &trans        &trans        &trans      &trans  &trans                          &trans
             >;
         };
 
-        SCROLL {
+        blank {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
@@ -98,12 +98,21 @@
             >;
         };
 
-        bluetooth {
+        Mouse {
             bindings = <
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans        &trans        &trans        &trans        &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans        &trans        &trans        &trans        &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans        &trans        &trans        &trans        &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &mkp MB4  &mkp MB3      &mkp MB5   &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &kp UP_ARROW  &mkp MB2   &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                     &trans
+            >;
+        };
+
+        Scroll {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
     };
