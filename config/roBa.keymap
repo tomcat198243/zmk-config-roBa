@@ -104,21 +104,26 @@
         };
 
         kigou {
-            bindings = <&encoder_msc_down_up>;
+            bindings = <
 &kp DOUBLE_QUOTES  &kp AMPERSAND    &kp ASTERISK  &kp EQUAL  &kp LESS_THAN                              &kp GREATER_THAN       &kp N7        &kp N8        &kp N9        &trans
 &kp COLON          &kp DOLLAR       &kp PERCENT   &kp CARET  &kp LEFT_BRACKET      &trans      &trans   &kp RIGHT_BRACKET      &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans
 &kp MINUS          &kp EXCLAMATION  &kp AT_SIGN   &kp HASH   &kp LEFT_PARENTHESIS  &trans      &trans   &kp RIGHT_PARENTHESIS  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
 &trans             &trans           &trans        &trans     &trans                &trans      &kp DEL  &kp N0                                                           &trans
             >;
+
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         Mouse {
-            bindings = <&encoder_msc_down_up>;
+            bindings = <
+
 &trans  &trans  &trans  &trans  &trans                      &trans  &mkp MB4  &mkp MB3      &mkp MB5   &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &kp UP_ARROW  &mkp MB2   &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                     &trans
             >;
+
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         Scroll {
