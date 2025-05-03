@@ -8,7 +8,7 @@
 #define MOUSE 4
 #define SCROLL 5
 #define NUM 6
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 100
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 120 // (好きな値)
 
 &mt {
     flavor = "balanced";
@@ -62,19 +62,18 @@
             tapping-term-ms = <200>;
         };
 
-        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-            // 追加: スクロールのタップ時間を設定 (20ms)
-            tap-ms = <20>;
+        mouse_scrl: mouse_wheel_scrl {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
+            tap-ms = <10>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        // 設定したいレイヤーに sensor-bindings = <&scroll_up_down>; を追記
+        // 設定したいレイヤーに sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>; を追記
 
         default_layer {
             bindings = <
@@ -84,7 +83,7 @@
 &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 6 SPACE  &lt_to_layer_0 3 LANGUAGE_2      &lt 6 LANGUAGE_1  &lt 3 ENTER                             &kp LS(LG(N5))
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
         };
 
         Bluetooth {
@@ -113,7 +112,7 @@
 &trans             &trans           &trans        &trans     &trans                &trans      &kp DEL  &kp N0                                                           &kp DELETE
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
         };
 
         Mouse {
@@ -124,7 +123,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &kp DELETE
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
         };
 
         Scroll {
@@ -144,7 +143,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                     &kp DELETE
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&mouse_scrl SCRL_UP SCRL_DOWN>;
         };
     };
 };
