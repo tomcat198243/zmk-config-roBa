@@ -8,7 +8,7 @@
 #define MOUSE 4
 #define SCROLL 5
 #define NUM 6
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 80
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 100
 
 &mt {
     flavor = "balanced";
@@ -62,12 +62,11 @@
             tapping-term-ms = <200>;
         };
 
-        encoder_msc_down_up: encoder_msc_down_up {
+        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
-            label = "ENCODER_MSC_DOWN_UP";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            // 追加: スクロールのタップ時間を設定 (20ms)
             tap-ms = <20>;
         };
     };
@@ -75,7 +74,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        // 設定したいレイヤーに sensor-bindings = <&encoder_msc_down_up>; を追記
+        // 設定したいレイヤーに sensor-bindings = <&scroll_up_down>; を追記
 
         default_layer {
             bindings = <
@@ -85,7 +84,7 @@
 &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 6 SPACE  &lt_to_layer_0 3 LANGUAGE_2      &lt 6 LANGUAGE_1  &lt 3 ENTER                             &kp LS(LG(N5))
             >;
 
-            sensor-bindings = <&encoder_msc_down_up>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         Bluetooth {
@@ -114,7 +113,7 @@
 &trans             &trans           &trans        &trans     &trans                &trans      &kp DEL  &kp N0                                                           &kp DELETE
             >;
 
-            sensor-bindings = <&encoder_msc_down_up>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         Mouse {
@@ -125,7 +124,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &kp DELETE
             >;
 
-            sensor-bindings = <&encoder_msc_down_up>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         Scroll {
@@ -145,7 +144,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                     &kp DELETE
             >;
 
-            sensor-bindings = <&encoder_msc_down_up>;
+            sensor-bindings = <&scroll_up_down>;
         };
     };
 };
